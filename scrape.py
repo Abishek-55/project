@@ -37,7 +37,8 @@ all_books= scrape_books(url)
 with open("books.json", 'w', encoding="utf-8") as f:
     json.dump(all_books, f, indent=4, ensure_ascii=False)
 
-with open('books.csv', 'w', encoding='utf-8') as f:
+with open('books.csv', 'w') as f:
     writer= csv.DictWriter(f, fieldnames=['title', 'price','currency'])
     writer.writeheader()
     writer.writerows(all_books)
+    
